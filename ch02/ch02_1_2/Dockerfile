@@ -1,4 +1,4 @@
-FROM golang:1.9
+FROM golang:1.9-alpine
 
 RUN mkdir /echo
 COPY main.go /echo
