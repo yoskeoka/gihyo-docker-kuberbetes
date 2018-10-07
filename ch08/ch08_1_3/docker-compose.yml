@@ -17,10 +17,11 @@ services:
     - elasticsearch
 
   fluentd:
-    image: ch07/fluentd:latest 
+    build: ./fluentd-elasticsearch
     ports:
       - "24224:24224"
       - "24220:24220"
+      - "24224:24224/udp"
     depends_on:
     - elasticsearch
 
@@ -35,5 +36,3 @@ services:
         tag: "docker.{{.Name}}"
     depends_on:
     - fluentd
-
-
